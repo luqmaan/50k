@@ -1,12 +1,6 @@
 onmessage = function(e){
-  if ( e.data === "start" ) {
-
-		var a = [];
-
-		for (var i = 50000; i >= 0; i--) {
-		    a.push(i);
-		};
-
+  if ( e.data[0] === "start" ) {
+		var a = e.data[1];
 		function bubbleSort(a)
 		{
 		    var swapped;
@@ -26,6 +20,6 @@ onmessage = function(e){
 		bubbleSort(a);
 		var end = new Date().getTime();
 		var time = end - start;
-		postMessage(time);
+		postMessage(time, [a]);
   }
 };
