@@ -75,7 +75,7 @@ if (typeof(Worker)==="undefined") {
   alert("Ops, your browser doesn't support HTML5 Web Worker! Please choose another modern browser and try again.");
 }
 
-var data = [];
+var data = window.data = [];
 for (var i = 50000; i >= 0; i--) {
   data.push(i);
 };
@@ -139,7 +139,7 @@ function afterStop(spentTime, mode) {
           <h3>Sorting 50K Array with Bubble Sort</h3>
         </div>
         <p class="lead" style="text-align: center;">
-          <button class="btn btn-large" onclick="javascript:nonWebWorker();">Without Web Worker</button>
+          <button class="btn btn-large" onclick="javascript:nonWebWorker(data);">Without Web Worker</button>
           <button class="btn btn-success btn-large" onclick="javascript:withWebWorker();">With Web Worker</button>
         </p>
         
