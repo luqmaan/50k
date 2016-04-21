@@ -75,14 +75,13 @@ if (typeof(Worker)==="undefined") {
   alert("Ops, your browser doesn't support HTML5 Web Worker! Please choose another modern browser and try again.");
 }
 
-function nonWebWorker() {
-    preStart();
-    var a = [];
+var data = [];
+for (var i = 50000; i >= 0; i--) {
+  data.push(i);
+};
 
-    for (var i = 50000; i >= 0; i--) {
-        a.push(i);
-    };
-     
+function nonWebWorker(a) {
+    preStart();
     function bubbleSort(a)
     {
         var swapped;
@@ -113,7 +112,7 @@ function withWebWorker() {
       afterStop(e.data, true);
     };
 
-    worker.postMessage("start");
+    worker.postMessage("start", [data]);
 }
 
 function preStart() {
