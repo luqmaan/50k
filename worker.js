@@ -20,6 +20,6 @@ onmessage = function(e){
 		bubbleSort(a);
 		var end = new Date().getTime();
 		var time = end - start;
-		postMessage(time, [a]);
+		postMessage([time, a]);
   }
 };
