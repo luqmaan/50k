@@ -109,10 +109,10 @@ function withWebWorker() {
     preStart();
     var worker = new Worker("worker.js");
     worker.onmessage = function(e) {
-      afterStop(e.data, true);
+      afterStop(e.data[0], true);
     };
 
-    worker.postMessage("start", [data]);
+    worker.postMessage(["start", data]);
 }
 
 function preStart() {
