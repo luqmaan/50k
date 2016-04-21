@@ -143,11 +143,12 @@ function afterStop(spentTime, mode) {
       <div class="container">
         <div class="page-header">
           <h3>Sorting 50K Array with Bubble Sort</h3>
+          <p> except this fork copies over the array to the worker. </p>
         </div>
         <p class="lead" style="text-align: center;">
           <button class="btn btn-large" onclick="javascript:nonWebWorker(data);">Without Web Worker</button>
           <button class="btn btn-success btn-large" onclick="javascript:withWebWorker();">With Web Worker</button>
-          <button class="btn btn-large" onclick="javascript:reset();">reset</button>
+          <button class="btn btn-large" onclick="javascript:reset();">reset array</button>
         </p>
         
         <div id="progressbar" class="progress progress-striped active hide">
